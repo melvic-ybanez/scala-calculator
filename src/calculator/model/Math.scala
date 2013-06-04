@@ -5,7 +5,7 @@ object Math {
     def operator(c: Char) = (binOps + unOps).contains(c)
     op match {
       case c: Char => operator(c)
-      case s: String => operator(s.head) & !s.exists(_.isDigit)
+      case s: String => operator(s.head) && !s.exists(_.isDigit)
       case _ => false
     }
   }      
