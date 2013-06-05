@@ -5,7 +5,6 @@ import scala.swing.event.ButtonClicked
 import java.awt.Color
 import java.awt.Font
 import calculator.model._
-import com.sun.org.apache.xalan.internal.xsltc.compiler.FormatNumberCall
 
 class FieldPane(calc: CalculatorPane) extends BorderPanel {
   import calc.buttonsPane.northPane._
