@@ -21,3 +21,12 @@ class CalculatorPane extends BorderPanel {
     case ButtonClicked(`mcButton`) => memory = None
   }
 }
+
+object CalculatorPane {
+  def createFrame = new MainFrame {
+    title = "McyCalculator"
+    resizable = false
+    contents  = new CalculatorPane
+    centerOnScreen
+  }
+}
