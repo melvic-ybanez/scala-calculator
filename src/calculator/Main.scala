@@ -12,5 +12,6 @@ object Main extends SimpleSwingApplication {
     title = "McyCalculator"
     resizable = false
     contents  = new CalculatorPane
+    centerOnScreen
   }  
 }
