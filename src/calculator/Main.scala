@@ -8,10 +8,5 @@ import javax.swing.plaf.nimbus.NimbusLookAndFeel
 object Main extends SimpleSwingApplication {  
   UIManager.setLookAndFeel(new NimbusLookAndFeel)
   
-  def top = new MainFrame {
-    title = "McyCalculator"
-    resizable = false
-    contents  = new CalculatorPane
-    centerOnScreen
-  }  
+  def top = CalculatorPane.createFrame  
 }
