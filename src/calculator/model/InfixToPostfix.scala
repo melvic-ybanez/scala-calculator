@@ -41,7 +41,7 @@ class InfixToPostfix private(expression: String) {
     val newExp = expression.replace("log ", Math.log).replace("ln ", Math.ln)
       .replace("sin ", Math.sin).replace("cos ", Math.cos)
       .replace("tan ", Math.tan).replace("sinh ", Math.sinh)
-      .replace("cosh ", Math.cosh).replace("tanh", Math.tanh)
+      .replace("cosh ", Math.cosh).replace("tanh ", Math.tanh)
       .replace("P", Math.perm).replace("C", Math.comb)
       .replace("x", "*").replace("E", "*10^")
     val tokens = tokenized(Nil, normalized("", "0+" + newExp)).reverse
