@@ -10,7 +10,7 @@ class FieldPane(calc: CalculatorPane) extends BorderPanel {
   import calc.buttonsPane.northPane._
   import calc.buttonsPane.centerPane._
     
-  val inputField = new CalcField {    
+  val inputField = new CalcField {
     listenTo(
       sinButton, cosButton, tanButton, sinhButton, coshButton,
       tanhButton, logButton, lnButton, permButton, combButton,
@@ -18,10 +18,12 @@ class FieldPane(calc: CalculatorPane) extends BorderPanel {
       rootButton, fourButton, fiveButton, sixButton, addButton, 
       subButton, factButton, oneButton, twoButton, threeButton,
       expButton, paren1Button, paren2Button, zeroButton, decButton, 
-      mrButton, ansButton, bsButton, clButton)
+      mrButton, ansButton, bsButton, clButton)    
     reactions += {
       case ButtonClicked(`permButton`) => text += "P"
-      case ButtonClicked(`combButton`) => text += "C"  
+      case ButtonClicked(`combButton`) => text += "C"
+      case ButtonClicked(`expButton`) => text += "^"
+      case ButtonClicked(`factButton`) => text += "!"
       case ButtonClicked(button) if List(
         sinButton, cosButton, tanButton, sinhButton, coshButton, tanhButton, logButton, lnButton)
         .contains(button) => text += button.text + " "
@@ -63,7 +65,7 @@ class FieldPane(calc: CalculatorPane) extends BorderPanel {
 
 class CalcField extends TextField {  
   horizontalAlignment = Alignment.Right
-  font = new Font(font.getFamily, Font.PLAIN, 15)
+  font = new Font("Tahoma", Font.PLAIN, 18)
   border = Swing.EmptyBorder(7, 7, 7, 7)
   editable = false
 }
