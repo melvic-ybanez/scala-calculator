@@ -23,7 +23,7 @@ class Evaluator private(postfix: List[String]) {
     }
   }
   
-  def compBin(a: Double, b: Double, op: String) = op match {
+  def compBin(a: Double, b: Double, op: String): Double = op match {
     case "^" => math.pow(a, b)
     case "*" => a * b
     case "/" => a / b
@@ -33,7 +33,7 @@ class Evaluator private(postfix: List[String]) {
     case Math.comb => Math.combination(a.toInt, b.toInt)
   }
   
-  def compUn(n: Double, op: String) = op match {
+  def compUn(n: Double, op: String): Double = op match {
     case "!" => Math.factorial(n.toInt) 
     case Math.sqrt => math.sqrt(n)
     case Math.log => math.log10(n)
